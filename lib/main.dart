@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_newapp/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'SAVE A LIFE',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
       ),
-      home: const MyHomePage(title: 'Flutter Cynthia\'s Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: HomePage()
     );
   }
 }
