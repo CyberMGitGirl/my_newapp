@@ -1,5 +1,43 @@
+import 'package:my_newapp/bottom_navigation.dart';
+import 'package:my_newapp/pages/home_page.dart';
+import 'package:my_newapp/pages/login_page.dart';
+import 'package:my_newapp/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
-import 'package:my_newapp/home_page.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Save A Life',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+      ),
+      debugShowCheckedModeBanner: false, 
+      routes: {
+        "/": (context)=> OnboardingPage(),
+        "/home": (context)=> BottomNavigation(),
+        "/login": (context)=> LoginPage()
+      },
+      initialRoute: "/login",
+                                                                               // Note...home: BottomNavigation()
+    );
+  }
+}
+
+
+
+
+
+
+
+/* import 'package:flutter/material.dart';
+import 'package:my_newapp/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -123,3 +161,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+*/

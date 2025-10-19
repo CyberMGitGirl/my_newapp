@@ -35,11 +35,11 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          //Widget for showing image
+                                            //This is a widget for showing image
         Image.asset(
           "assets/mapblur.jpg",
-          //width: MediaQuery.sizeOf(context).width,
-          //height: MediaQuery.sizeOf(context).height * 0.6,
+                                             //FIT SCREEN... width: MediaQuery.sizeOf(context).width,
+                                            //FIT...height: MediaQuery.sizeOf(context).height * 0.6,
         
           
           ),
