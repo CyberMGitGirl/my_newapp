@@ -3,6 +3,10 @@
         android:label="Medicall_ClassApp"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
+
+        <!-- <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="HIDE_KEY_FOR_PUBLICREPO"/> -->  
+                                                  
         <activity
             android:name=".MainActivity"
             android:exported="true"

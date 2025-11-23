@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "400897483235",
+    "project_id": "firstappcymedicall",
+    "storage_bucket": "firstappcymedicall.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400897483235:android:f0df53c6ba6590f2d400d6",
+        "android_client_info": {
+          "package_name": "com.example.my_newapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmToHz23i6wgf7asyy_O6w8F1i1wUiTX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

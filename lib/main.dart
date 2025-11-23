@@ -1,10 +1,31 @@
+import 'dart:io';
+
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:my_newapp/bottom_navigation.dart';
-import 'package:my_newapp/pages/home_page.dart';
+import 'package:my_newapp/firebase_options.dart';
+import 'package:my_newapp/pages/editing/editing_profile_page.dart';
+import 'package:my_newapp/pages/forgot_password_page.dart';
 import 'package:my_newapp/pages/login_page.dart';
 import 'package:my_newapp/pages/onboarding_page.dart';
-import 'package:flutter/material.dart';
+import 'package:my_newapp/pages/provider/user_notifier.dart';
+import 'package:my_newapp/pages/signup_page.dart';
+import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  await GoogleSignIn.instance.initialize(
+    clientId: Platform.isAndroid 
+    ? "400897483235-silqa42o2a0nf7h5du37h825j59rg9au.apps.googleusercontent.com" 
+    : "400897483235-nj5jkpjpr4g8b7g98vb6i2014jmg7869.apps.googleusercontent.com ",
+
+    serverClientId: "400897483235-gt7buc5pbmcctop9th85k51se9u8jcdc.apps.googleusercontent.com "
+    
+  );
   runApp(const MyApp());
 }
 
@@ -13,28 +34,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Save A Life',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+    return ChangeNotifierProvider(
+      create: (context) => UserNotifier(),
+      child: MaterialApp(
+        title: 'Save A Life',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+          textTheme: GoogleFonts.robotoTextTheme(),
+        ),
+        debugShowCheckedModeBanner: false,
+        routes: {
+          "/o": (context) => OnboardingPage(),
+          "/home": (context) => BottomNavigation(),
+          "/login": (context) => LoginPage(),
+          "/signup": (context) => SignupPage(),
+          "/forgot": (context) => ForgotPasswordPage(),
+          "/edit-profile": (context) => EditingProfilePage(),
+        },
+        initialRoute: "/login",
+        // home: BottomNavigation()
       ),
-      debugShowCheckedModeBanner: false, 
-      routes: {
-        "/": (context)=> OnboardingPage(),
-        "/home": (context)=> BottomNavigation(),
-        "/login": (context)=> LoginPage()
-      },
-      initialRoute: "/login",
-                                                                               // Note...home: BottomNavigation()
     );
   }
 }
-
-
-
-
-
-
 
 /* import 'package:flutter/material.dart';
 import 'package:my_newapp/pages/home_page.dart';

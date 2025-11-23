@@ -1,28 +1,5 @@
-/*import 'package:flutter/material.dart';
-import 'package:my_newapp/pages/home_page.dart';
-
-class ButtomNavigation extends StatefulWidget {
-  const ButtomNavigation({super.key});
-
-  @override
-  State<ButtomNavigation> createState() => _ButtomNavigationState();
-}
-
-class _ButtomNavigationState extends State<ButtomNavigation> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: HomePage(),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [BottomNavigationBarItem(icon: Icon(Icons.home))],
-      ),
-    );
-  }
-} */
-
-
-import 'package:my_newapp/pages/contact_page.dart'; 
-import 'package:my_newapp/pages/home_page.dart';
+import 'package:my_newapp/pages/contact_page.dart';
+import 'package:my_newapp/pages/home_page.dart'; 
 import 'package:my_newapp/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
