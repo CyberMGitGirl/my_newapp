@@ -1,5 +1,38 @@
+import 'package:json_annotation/json_annotation.dart';
 
+part 'user_detail.g.dart';
+
+@JsonSerializable(explicitToJson: true)
 class UserDetail {
+  final String name;
+  final String email;
+  final String phoneNumber;
+  final String address;
+  final String profilePicture;
+  final String occupation;
+
+  const UserDetail({
+    required this.name,
+    required this.email,
+    this.phoneNumber = "",
+    this.address = "",
+    this.profilePicture = "",
+    this.occupation = "",
+  });
+
+                                                                                      // JSON to Model
+  factory UserDetail.fromJson(Map<String, dynamic> json) =>
+      _$UserDetailFromJson(json);
+
+                                                                                      // Model to JSON
+  Map<String, dynamic> toJson() => _$UserDetailToJson(this);
+}
+
+
+
+
+
+/* class UserDetail {
 
   final String name;
   final String email;
@@ -40,7 +73,7 @@ class UserDetail {
       occupation: json["occupation"] ?? "",
     );
   }
-}
+} */
 
 
 
